@@ -3,3 +3,19 @@
     font-family: Arial, Helvetica, sans-serif;
     color: darkgrey;
 }
+
+
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  
+ 
+}
+
+
+
+img{
+    width: 230px;
+}

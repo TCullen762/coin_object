@@ -28,9 +28,9 @@ let coin = {
     toString: function () {
         
         if(this.state === 0){
-            return "tails"
+            return "Tails"
         }else if(this.state === 1){
-            return "head"
+            return "Head"
         }
     
         /* 2. Return the string "Heads" or "Tails", depending on whether
@@ -41,14 +41,14 @@ let coin = {
     toHTML: function() {
        
         let image = document.createElement('img');
-        let heads = image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQczhdOe7EW1V9YzLl-9ioUB0wkuLe8twYxMA&usqp=CAU'
-        let tails = image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7J4sotmHHn2_Nc1RWxS4H-uJWjBJmEnC5tA&usqp=CAU'
+        //let heads = image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQczhdOe7EW1V9YzLl-9ioUB0wkuLe8twYxMA&usqp=CAU'
+       // let tails = image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7J4sotmHHn2_Nc1RWxS4H-uJWjBJmEnC5tA&usqp=CAU'
         if(this.state === 0){
-            return  heads
+             image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQczhdOe7EW1V9YzLl-9ioUB0wkuLe8twYxMA&usqp=CAU'
              
        
         } else if(this.state === 1){
-            return  tails
+             image.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7J4sotmHHn2_Nc1RWxS4H-uJWjBJmEnC5tA&usqp=CAU'
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
       
@@ -66,18 +66,40 @@ Write a function called display20Images, again using a loop to flip the coin 20 
 
 
  function display20Flips(){
-   
-    for(coin.flip = 1; coin.flip <= 20; coin.flip ++){
+    //console.log('20 flips')
+   //I tried  passing flip in the loop and even toString what am i getting wrong?
+    for(index = 1; index <= 20; index ++){
 
-       coin.toString
+      coin.flip() //accesses the method
        
         
        
-        document.body.append (toString)
-        
+      let displayFlips = document.createElement('div')
+     displayFlips.append(coin.toString())
+        document.body.append(displayFlips)
  
         //random result not showing up and not printing to page
 }
 
+
+
 }
 display20Flips()
+
+
+
+
+function display20Images(){
+    for(index = 1; index <=20; index ++){
+        coin.flip()
+        let displayFlips = document.createElement('div')
+        displayFlips.append(coin.toHTML())
+        document.body.append(displayFlips)
+ 
+
+    
+ 
+
+}
+}
+display20Images()
